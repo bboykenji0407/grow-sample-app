@@ -27,6 +27,7 @@ Things you may want to cover:
 
 |    column   |  type  |   option   |
 |-------------|--------|------------|
+| full_name   | string | null:false |
 | dancer_name | string | null:false |
 |   email     | string | unique:true, null: false |
 

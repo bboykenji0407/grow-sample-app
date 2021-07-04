@@ -1,0 +1,22 @@
+<div class="best16-judge">
+  <h1>Best16 採点ページ!</h1>
+</div>
+<%= form_with url: "/best16s", method: :post, local: true do |form| %>
+  <div>
+    <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %>  ※トーナメント順です。
+  </div>
+  <br>基礎値
+  <%= form.number_field :foundation, min:1,max:5 %>
+  <br>正確性
+  <%= form.number_field :accuracy, min:1,max:5 %>
+  <br>独創性
+  <%= form.number_field :originality, min:1,max:5 %>
+  <br>ダイナミック
+  <%= form.number_field :dynamic, min:1,max:5 %>
+  <br>戦略
+  <%= form.number_field :strategy, min:1,max:5 %><br>
+   
+  <%= form.text_field :score, placeholder: "合計" %>※合計確認後、保存
+  <br><%= form.submit '保存する' %>
+
+<% end %>
