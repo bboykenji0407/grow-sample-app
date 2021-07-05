@@ -3,6 +3,7 @@ class Best16sController < ApplicationController
   end
 
   def new
+    @best16 = Best16.new
   end
 
   def create
@@ -15,6 +16,8 @@ class Best16sController < ApplicationController
   end
 
   def show
+    @best16s = Best16.all
+    
   end
 
   private
