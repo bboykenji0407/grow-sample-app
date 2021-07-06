@@ -1,6 +1,6 @@
 <div class="best16-judge">
-  <h1>Best16 採点ページ!</h1>
-  <%= form_with url: "/best16s", method: :post, local: true do |form| %>
+  <h1>Best8 採点ページ!</h1>
+  <%= form_with url: "/best8s", method: :post, local: true do |form| %>
   <div class="score-grading">※トーナメント順です。<br>
     <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %><br>  
     基礎値

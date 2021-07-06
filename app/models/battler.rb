@@ -65,4 +65,5 @@ class Battler < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :best16s
+  has_many :best8s
 end

@@ -1,28 +1,24 @@
-class Best16sController < ApplicationController
-  def index
-  end
-
+class Best8sController < ApplicationController
   def new
-    @best16 = Best16.new
+    @best8 = Best8.new
   end
 
   def create
-    @best16 = Best16.create(best16_params)
-    if @best16.save
-      redirect_to best16s_new_path
+    @best8 = Best8.create(best8_params)
+    if @best8.save
+      redirect_to best8s_new_path
     else
       render :new
     end
   end
 
   def show
-    @best16s = Best16.all
-    
+    @best8s = Best8.all
   end
 
   private
 
-  def best16_params
+  def best8_params
     params.permit(:battler_id, :foundation, :originality, :accuracy, :dynamic, :strategy, :score).merge(user_id: current_user.id)
   end
 end

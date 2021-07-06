@@ -1,3 +1,46 @@
 // Place all the styles related to the best16s controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.best16-show {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+  font-size: 20px;
+  color: orange;
+}
+p{
+  color: rgb(110, 8, 8);
+}
+.battle-score span{
+  
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+
+.best16-judge{
+  text-align: center;
+}
+li {
+  list-style: none;
+  
+}
+.score-grading{
+  font-size: 20px;
+}
+.score{
+  width: 3%;
+  height: 2%;
+  font-size: 30px;
+}
+.select-box{
+  margin: 10px;
+  font-size: 20px;
+}
+.integration{
+  width: 10%;
+  height: 5%;
+}
