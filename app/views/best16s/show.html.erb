@@ -1,14 +1,18 @@
-<h1>Best16 結果一覧</h1><%= link_to '戻る',  root_path %>
-<% @best16s.each do |best16| %>
-  <div class='battle-score'>
-    <%= best16.user.dancer_name %><br>
-    <span><%= best16.battler.name %></span>
-    <span>基礎＝<%= best16.foundation %>点</span>
-    <span>正確性＝<%= best16.accuracy %>点</span>
-    <span>独創性＝<%= best16.originality %>点</span>
-    <span>ダイナミック＝<%= best16.dynamic %>点</span>
-    <span>戦略＝<%= best16.strategy %>点</span>
-    <span>合計=<%= best16.score %></span>
-  </div>
-<% end %>
+<div class="best16-show">
+
+  <h1>Best16 結果一覧</h1><%= link_to '戻る',  root_path %><br>
+  <p>　※注意※　勝敗とは関係ないので、個々のレベルアップにお役立てください。</p><br>
+  <% @best16s.each do |best16| %>
+      <span>ジャッジ</span><br><%= best16.user.dancer_name %><br>
+    <div class='battle-score'>
+      <span><%= best16.battler.name %></span>
+      <span>基礎=<%= best16.foundation %>点</span>
+      <span>正確性＝<%= best16.accuracy %>点</span>
+      <span>独創性＝<%= best16.originality %>点</span>
+      <span>ダイナミック＝<%= best16.dynamic %>点</span>
+      <span>戦略＝<%= best16.strategy %>点</span>
+      <span>合計=<%= best16.score %></span>
+    </div>
+  <% end %>
+</div>
 
