@@ -1,0 +1,21 @@
+<div class="best16-judge">
+  <h1>Best8 採点ページ!</h1>
+  <%= form_with url: "/best8s", method: :post, local: true do |form| %>
+  <div class="score-grading">※トーナメント順です。<br>
+    <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %><br>  
+    基礎値
+    <li><%= form.number_field :foundation, min:1,max:5, class: "score" %></li>
+    正確性
+    <li><%= form.number_field :accuracy, min:1,max:5, class: "score" %></li>
+    独創性
+    <li><%= form.number_field :originality, min:1,max:5,  class: "score" %></li>
+    ダイナミック
+    <li><%= form.number_field :dynamic, min:1,max:5, class: "score" %></li>
+    戦略
+    <li><%= form.number_field :strategy, min:1,max:5, class: "score" %></li><br>
+  </div>
+  <%= form.text_field :score, placeholder: "合計入力" , class: "integration"%><br>※合計確認後、保存
+  <br><%= form.submit '保存する' %>
+<% end %>
+<%= link_to '戻る',  root_path %>
+</div>
