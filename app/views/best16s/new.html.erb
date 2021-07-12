@@ -1,21 +1,41 @@
 <div class="best16-judge">
   <h1>Best16 採点ページ!</h1>
-  <%= form_with url: "/best16s", method: :post, local: true do |form| %>
+  <%= form_with model: @best16, method: :post, local: true do |form| %>
+  <%= render 'layouts/error_messages', model: form.object %>
   <div class="score-grading">※トーナメント順です。<br>
     <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %><br>  
     基礎値
-    <li><%= form.number_field :foundation, min:1,max:5, class: "score" %></li>
+    <li><%= form.number_field :foundation, min:1,max:5, class: "score", id: "point1" %></li>
     正確性
-    <li><%= form.number_field :accuracy, min:1,max:5, class: "score" %></li>
+    <li><%= form.number_field :accuracy, min:1,max:5, class: "score", id: "point2" %></li>
     独創性
-    <li><%= form.number_field :originality, min:1,max:5,  class: "score" %></li>
+    <li><%= form.number_field :originality, min:1,max:5,  class: "score", id: "point3" %></li>
     ダイナミック
-    <li><%= form.number_field :dynamic, min:1,max:5, class: "score" %></li>
+    <li><%= form.number_field :dynamic, min:1,max:5, class: "score", id: "point4" %></li>
     戦略
-    <li><%= form.number_field :strategy, min:1,max:5, class: "score" %></li><br>
+    <li><%= form.number_field :strategy, min:1,max:5, class: "score", id: "point5" %></li><br>
+    <script>
+$('#point5').change(function(){
+  var a = $('#point1').val();
+  var b = $('#point2').val();
+  var c = $('#point3').val();
+  var d = $('#point4').val();
+  var e = $('#point5').val();
+  var ai = parseInt(a);
+  var bi = parseInt(b);
+  var ci = parseInt(c);
+  var di = parseInt(d);
+  var ei = parseInt(e);
+  var JsScore = ai + bi + ci + di + ei
+
+  $('#JsScore').val(JsScore)
+});
+</script>
   </div>
-  <%= form.text_field :score, placeholder: "合計入力" , class: "integration"%><br>※合計確認後、保存
+  <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計入力"
+   %><br>※合計確認後、保存
   <br><%= form.submit '保存する' %>
 <% end %>
+
 <%= link_to '戻る',  root_path %>
 </div>

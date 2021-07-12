@@ -1,4 +1,7 @@
 class Best8sController < ApplicationController
+  def index
+  end
+  
   def new
     @best8 = Best8.new
   end
