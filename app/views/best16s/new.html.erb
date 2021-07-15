@@ -2,7 +2,7 @@
   <h1>Best16 採点ページ!</h1>
   <%= form_with model: @best16, method: :post, local: true do |form| %>
   <%= render 'layouts/error_messages', model: form.object %>
-  <div class="score-grading">※トーナメント順です。<br>
+  <div class="score-grading">※トーナメント順です。(半角数字入力)<br>
     <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %><br>  
     基礎値
     <li><%= form.number_field :foundation, min:1,max:5, class: "score", id: "point1" %></li>
