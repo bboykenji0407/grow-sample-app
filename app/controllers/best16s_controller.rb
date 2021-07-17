@@ -23,6 +23,6 @@ class Best16sController < ApplicationController
   private
 
   def best16_params
-    params.permit(:battler_id, :foundation, :originality, :accuracy, :dynamic, :strategy, :score).merge(user_id: current_user.id)
+    params.require(:best16).permit(:battler_id, :foundation, :originality, :accuracy, :dynamic, :strategy, :score).merge(user_id: current_user.id)
   end
 end

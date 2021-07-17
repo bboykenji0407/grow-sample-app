@@ -22,6 +22,6 @@ class Best8sController < ApplicationController
   private
 
   def best8_params
-    params.permit(:battler_id, :foundation, :originality, :accuracy, :dynamic, :strategy, :score).merge(user_id: current_user.id)
+    params.require(:best8).permit(:battler_id, :foundation, :originality, :accuracy, :dynamic, :strategy, :score).merge(user_id: current_user.id)
   end
 end

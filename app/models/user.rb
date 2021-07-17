@@ -8,6 +8,7 @@ class User < ApplicationRecord
          validates :full_name
          validates :dancer_name
          end
+         has_many :best4s
          has_many :best8s
          has_many :best16s
 end

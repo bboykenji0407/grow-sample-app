@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_105815) do
+ActiveRecord::Schema.define(version: 2021_07_15_105346) do
 
   create_table "best16s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 2021_07_06_105815) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "strategy", null: false
     t.index ["user_id"], name: "index_best16s_on_user_id"
+  end
+
+  create_table "best4s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "battler_id", null: false
+    t.integer "foundation", null: false
+    t.integer "accuracy", null: false
+    t.integer "originality", null: false
+    t.integer "dynamic", null: false
+    t.integer "strategy", null: false
+    t.integer "score", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_best4s_on_user_id"
   end
 
   create_table "best8s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,5 +69,6 @@ ActiveRecord::Schema.define(version: 2021_07_06_105815) do
   end
 
   add_foreign_key "best16s", "users"
+  add_foreign_key "best4s", "users"
   add_foreign_key "best8s", "users"
 end

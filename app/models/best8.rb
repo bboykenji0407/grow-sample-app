@@ -1,5 +1,5 @@
 class Best8 < ApplicationRecord
-
+  belongs_to :user
   with_options presence: true do
     with_options format: {with: /\A[0-9]+\z/, message: "は半角数字のみ使用してください"} do
       validates :foundation
@@ -14,5 +14,4 @@ class Best8 < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :battler
-  belongs_to :user
 end
