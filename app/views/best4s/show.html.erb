@@ -1,0 +1,17 @@
+<div class="best16-show">
+  <h1>Best16 結果一覧</h1><%= link_to '戻る',  root_path %><br>
+  <p>　※注意※　勝敗とは関係ないので、個々のレベルアップにお役立てください。</p><br>
+  <% @best4s.each do |best4| %>
+      <span>ジャッジ</span><br><%= best4.user.dancer_name %><br>
+    <div class='battle-score'>
+      <span><%= best4.battler.name %></span>
+      <span>基礎=<%= best4.foundation %>点</span>
+      <span>正確性＝<%= best4.accuracy %>点</span>
+      <span>独創性＝<%= best4.originality %>点</span>
+      <span>ダイナミック＝<%= best4.dynamic %>点</span>
+      <span>戦略＝<%= best4.strategy %>点</span>
+      <span>合計=<%= best4.score %></span>
+    </div>
+  <% end %>
+</div>
+

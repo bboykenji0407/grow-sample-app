@@ -1,6 +1,6 @@
-class CreateBest4s < ActiveRecord::Migration[6.0]
+class CreateFinals < ActiveRecord::Migration[6.0]
   def change
-    create_table :best4s do |t|
+    create_table :finals do |t|
       t.references  :user,  foreign_key: true
       t.integer     :battler_id,  null: false
       t.integer     :foundation,  null: false
