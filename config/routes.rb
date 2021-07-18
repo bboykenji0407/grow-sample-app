@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'finals/index'
+  get 'finals/new'
+  get 'finals/create'
+  get 'finals/show'
   get 'best4s/index'
   get 'best4s/new'
   get 'best4s/create'
@@ -15,5 +19,6 @@ Rails.application.routes.draw do
   resources :best16s
   resources :best8s
   resources :best4s
+  resources :finals
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
