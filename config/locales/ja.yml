@@ -1,0 +1,40 @@
+ja:
+ activerecord:
+  attributes:
+    user:
+      email: メールアドレス
+      full_name: フルネーム
+      dancer_name: ダンサーネーム
+    best16:
+      battler_id: バトラーIDを
+      foundation: 基礎値
+      accuracy: 正確性
+      originality: 独創性
+      dynamic: ダイナミック
+      strategy: 戦略
+      score: 合計
+    best8:
+      battler_id: バトラーIDを
+      foundation: 基礎値
+      accuracy: 正確性
+      originality: 独創性
+      dynamic: ダイナミック
+      strategy: 戦略
+      score: 合計
+    best4:
+      battler_id: バトラーIDを
+      foundation: 基礎値
+      accuracy: 正確性
+      originality: 独創性
+      dynamic: ダイナミック
+      strategy: 戦略
+      score: 合計
+    final:
+      battler_id: バトラーIDを
+      foundation: 基礎値
+      accuracy: 正確性
+      originality: 独創性
+      dynamic: ダイナミック
+      strategy: 戦略
+      score: 合計
+    
