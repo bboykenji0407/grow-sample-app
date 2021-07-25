@@ -1,7 +1,7 @@
 <div class="best16-judge">
   <h1>Final 採点ページ!</h1>
   <%= form_with model: @final, method: :post, local: true do |form| %>
-  <%#= render 'layouts/error_messages', model: form.object %>
+  <%= render 'layouts/error_messages', model: form.object, class: "error-message"%>
   <div class="score-grading">※トーナメント順です。(半角数字入力)<br>
     <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %><br>  
     基礎値

@@ -59,6 +59,9 @@ li {
     background-color: gray;
     color: orange;
   }
+  .error-message {
+    font-size: 5px;
+  }
   p{
     color: rgb(110, 8, 8);
   }
@@ -81,7 +84,7 @@ li {
     font-size: 20px;
   }
   .score{
-    width: 3%;
+    width: 10%;
     height: 2%;
     font-size: 30px;
   }
@@ -90,7 +93,7 @@ li {
     font-size: 20px;
   }
   .integration{
-    width: 10%;
+    width: 20%;
     height: 5%;
   }
   
