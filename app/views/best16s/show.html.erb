@@ -5,8 +5,8 @@
   <% @best16s.each do |best16| %>
       <span>ジャッジ</span><br><%= best16.user.dancer_name %><br>
     <div class='battle-score'>
-      <span><%= best16.battler.name %></span>
-      <span>基礎=<%= best16.foundation %>点</span>
+      <span><%= best16.battler.name %><br></span>
+      <span><br>基礎=<%= best16.foundation %>点</span>
       <span>正確性＝<%= best16.accuracy %>点</span>
       <span>独創性＝<%= best16.originality %>点</span>
       <span>ダイナミック＝<%= best16.dynamic %>点</span>

@@ -10,6 +10,7 @@
   background-color: gray;
   font-size: 20px;
   color: orange;
+  padding-bottom: 10px;
 }
 p{
   color: rgb(110, 8, 8);
@@ -18,7 +19,9 @@ p{
   
   background-color: black;
   color: white;
-  padding: 5px;
+  padding: 3px;
+  
+
 }
 
 .best16-judge{
@@ -44,3 +47,60 @@ li {
   width: 10%;
   height: 5%;
 }
+
+@media screen and  (max-width:768px) { 
+  
+  .best16-show {
+    flex-direction: row;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 4px;
+    background-color: gray;
+    color: orange;
+  }
+  p{
+    color: rgb(110, 8, 8);
+  }
+  .battle-score span{
+    background-color: black;
+    color: white;
+    padding: 3px;
+    font-size: 8px;
+  }
+  
+  .best16-judge{
+    text-align: center;
+    font-size: 30px;
+  }
+  li {
+    list-style: none;
+    
+  }
+  .score-grading{
+    font-size: 20px;
+  }
+  .score{
+    width: 3%;
+    height: 2%;
+    font-size: 30px;
+  }
+  .select-box{
+    margin: 10px;
+    font-size: 20px;
+  }
+  .integration{
+    width: 10%;
+    height: 5%;
+  }
+  
+  //ここにCSSコードを書く。
+ }
+   
+ /* 600px〜959px：タブレット
+ ------------------------------ */
+ @media screen and (min-width:600px) and (max-width:959px) {
+  
+  
+  //ここにCSSコードを書く。
+ }
