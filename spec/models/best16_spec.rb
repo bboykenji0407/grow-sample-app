@@ -14,42 +14,42 @@ RSpec.describe Best16, type: :model do
       it 'battler_idが選択されていないと登録できない' do
         @best16.battler_id = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Battler 選択してください")
+        expect(@best16.errors.full_messages).to include("バトラーIDを選択してください")
       end
       it 'battler_idが1だと登録できない' do
         @best16.battler_id = 1
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Battler 選択してください")
+        expect(@best16.errors.full_messages).to include("バトラーIDを選択してください")
       end
       it 'foundationが空だと登録できない' do
         @best16.foundation = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Foundation can't be blank")
+        expect(@best16.errors.full_messages).to include("基礎値を入力してください")
       end
       it 'accuracyが空だと登録できない' do
         @best16.accuracy = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Accuracy can't be blank")
+        expect(@best16.errors.full_messages).to include("正確性を入力してください")
       end
       it 'originalityが空だと登録できない' do 
         @best16.originality = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Originality can't be blank")
+        expect(@best16.errors.full_messages).to include("独創性を入力してください")
       end
       it 'dynamicが空だと登録できない' do 
         @best16.dynamic = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Dynamic can't be blank")
+        expect(@best16.errors.full_messages).to include("ダイナミックを入力してください")
       end
       it 'strategyが空だと登録できない' do 
         @best16.strategy = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Strategy can't be blank")
+        expect(@best16.errors.full_messages).to include("戦略を入力してください")
       end
       it 'scoreが空だと登録できない' do 
         @best16.score = ''
         @best16.valid?
-        expect(@best16.errors.full_messages).to include("Score can't be blank")
+        expect(@best16.errors.full_messages).to include("合計を入力してください")
       end
     end
   end

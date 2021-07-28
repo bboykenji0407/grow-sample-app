@@ -14,42 +14,42 @@ RSpec.describe Best8, type: :model do
       it 'battler_idが選択されていないと登録できない' do
         @best8.battler_id = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Battler 選択してください")
+        expect(@best8.errors.full_messages).to include("バトラーIDを選択してください")
       end
       it 'battler_idが1だと登録できない' do
         @best8.battler_id = 1
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Battler 選択してください")
+        expect(@best8.errors.full_messages).to include("バトラーIDを選択してください")
       end
       it 'foundationが空だと登録できない' do
         @best8.foundation = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Foundation can't be blank")
+        expect(@best8.errors.full_messages).to include("基礎値を入力してください")
       end
       it 'accuracyが空だと登録できない' do
         @best8.accuracy = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Accuracy can't be blank")
+        expect(@best8.errors.full_messages).to include("正確性を入力してください")
       end
       it 'originalityが空だと登録できない' do 
         @best8.originality = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Originality can't be blank")
+        expect(@best8.errors.full_messages).to include("独創性を入力してください")
       end
       it 'dynamicが空だと登録できない' do 
         @best8.dynamic = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Dynamic can't be blank")
+        expect(@best8.errors.full_messages).to include("ダイナミックを入力してください")
       end
       it 'strategyが空だと登録できない' do 
         @best8.strategy = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Strategy can't be blank")
+        expect(@best8.errors.full_messages).to include("戦略を入力してください")
       end
       it 'scoreが空だと登録できない' do 
         @best8.score = ''
         @best8.valid?
-        expect(@best8.errors.full_messages).to include("Score can't be blank")
+        expect(@best8.errors.full_messages).to include("合計を入力してください")
       end
     end
   end
