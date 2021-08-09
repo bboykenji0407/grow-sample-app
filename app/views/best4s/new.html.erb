@@ -1,5 +1,5 @@
 <div class="best16-judge">
-  <h1>Best4 <br>採点ページ!</h1>
+  <h2>Best4 <br>採点ページ!</h2>
   <%= form_with model: @best4, method: :post, local: true do |form| %>
   <%#= render 'layouts/error_messages', model: form.object %>
   <div class="score-grading">※トーナメント順です。(半角数字入力)<br>
@@ -15,27 +15,28 @@
     戦略
     <li><%= form.number_field :strategy, min:1,max:5, class: "score", id: "point5" %></li><br>
     <script>
-$('#point5').change(function(){
-  var a = $('#point1').val();
-  var b = $('#point2').val();
-  var c = $('#point3').val();
-  var d = $('#point4').val();
-  var e = $('#point5').val();
-  var ai = parseInt(a);
-  var bi = parseInt(b);
-  var ci = parseInt(c);
-  var di = parseInt(d);
-  var ei = parseInt(e);
-  var JsScore = ai + bi + ci + di + ei
+      $('#point5').change(function(){
+      var a = $('#point1').val();
+      var b = $('#point2').val();
+      var c = $('#point3').val();
+      var d = $('#point4').val();
+      var e = $('#point5').val();
+      var ai = parseInt(a);
+      var bi = parseInt(b);
+      var ci = parseInt(c);
+      var di = parseInt(d);
+      var ei = parseInt(e);
+      var JsScore = ai + bi + ci + di + ei
 
-  $('#JsScore').val(JsScore)
-});
-</script>
+      $('#JsScore').val(JsScore)
+      });
+    </script>
   </div>
-  <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計入力"
+    ※直接入力しない<br>
+  <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計"
    %><br>※合計確認後、保存
   <br><%= form.submit '保存する' %>
 <% end %>
 
-<%= link_to '戻る',  root_path %>
+<%= link_to '戻る',  best16s_index_path %>
 </div>

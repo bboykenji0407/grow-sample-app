@@ -1,7 +1,7 @@
 <div class="growth-app">
 <body>
   <h2>各バトルパートへ！！</h2>
-  <h4>評価ページへ</h4>
+  <h4>評価用ページへ</h4>
   <%= link_to 'バトルパート一覧', best16s_index_path, class: "subtitle" %>
 
   <h2>バトル結果一覧</h2>
@@ -11,6 +11,6 @@
   <%= link_to 'Final', finals_show_path, class: "battle-scores" %>
 
 
-  <%= link_to 'ログアウト',   destroy_user_session_path, method: :delete %>
+  <br><%= link_to 'ログアウト',   destroy_user_session_path, method: :delete %>
 </body>
 </div>

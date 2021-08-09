@@ -1,8 +1,11 @@
-<div class="growth-app">
+<div class="growth-top">
   <h1>各バトルパートのページへ！</h1>
 
   <%= link_to 'best-16', best16s_new_path, class: "subtitle" %>
   <%= link_to 'best-8', best8s_new_path, class: "subtitle" %>
   <%= link_to 'Semi-Fainls', best4s_new_path, class: "subtitle" %>
-  <%= link_to 'Final', finals_new_path, class: "subtitle" %>
+  <%= link_to 'Final', finals_new_path, class: "subtitle" %><br>
+<% if user_signed_in? %>
+  <%= link_to '戻る', root_path, class: 'top-page'%>
+<% end %>
 </div>

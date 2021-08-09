@@ -1,5 +1,5 @@
 <div class="best16-judge">
-  <h1>Final 採点ページ!</h1>
+  <h2>Final 採点ページ!</h2>
   <%= form_with model: @final, method: :post, local: true do |form| %>
   <%= render 'layouts/error_messages', model: form.object, class: "error-message"%>
   <div class="score-grading">※トーナメント順です。(半角数字入力)<br>
@@ -32,10 +32,11 @@ $('#point5').change(function(){
 });
 </script>
   </div>
-  <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計入力"
+    ※直接入力しない<br>
+    <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計"
    %><br>※合計確認後、保存
   <br><%= form.submit '保存する' %>
 <% end %>
 
-<%= link_to '戻る',  root_path %>
+<%= link_to '戻る',  best16s_index_path %>
 </div>

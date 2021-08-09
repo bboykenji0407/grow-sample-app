@@ -1,5 +1,5 @@
 <div class="best16-judge">
-  <h1>Best8 <br>採点ページ!</h1>
+  <h2>Best8 <br>採点ページ!</h2>
   <%= form_with model: @best8, method: :post, local: true do |form| %>
     
       <%= render 'layouts/error_messages', model: form.object %>
@@ -32,8 +32,9 @@
       });
     </script>
   </div>
-  <%= form.text_field :score, placeholder: "合計入力" , class: "integration", id: "JsScore" %><br>※合計確認後、保存
+    ※直接入力しない<br>
+    <%= form.text_field :score, placeholder: "合計" , class: "integration", id: "JsScore" %><br>※合計確認後、保存
   <br><%= form.submit '保存する' %>
   <% end %>
-  <%= link_to '戻る',  root_path %>
+  <%= link_to '戻る',  best16s_index_path %>
 </div>

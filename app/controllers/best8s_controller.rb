@@ -1,4 +1,5 @@
 class Best8sController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   def index
   end
   
@@ -16,7 +17,7 @@ class Best8sController < ApplicationController
   end
 
   def show
-    @best8s = Best8.all
+    @best8s = Best8.order("battler_id")
   end
 
   private

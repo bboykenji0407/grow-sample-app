@@ -3,6 +3,57 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//users,バトル用にも効いている。
+.best16-show {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+  font-size: 20px;
+  color: orange;
+  padding-bottom: 10px;
+}
+.battle-score span{
+  background-color: black;
+  color: white;
+  padding: 3px;
+}
+.best16-judge {
+  text-align: center;
+  list-style: none;
+}
+.growth-app {
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  .battle-scores {
+    font-size: 30px;
+    background-color: green;
+    color: white;
+    padding: 2px;
+  }
+  h2 {
+    width: 100%;
+    font-size: 30px;
+    background-color: yellow;
+  }
+  h4 {
+    padding: 0;
+    margin: 0;
+  }
+  h1 {
+    background-color: yellow;
+    width: 100%;
+  }
+  a {
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+  }
+}
+@media (min-width:1080) {
 .best16-show {
   text-align: center;
   height: 100%;
@@ -16,12 +67,9 @@ p{
   color: rgb(110, 8, 8);
 }
 .battle-score span{
-  
   background-color: black;
   color: white;
   padding: 3px;
-  
-
 }
 
 .best16-judge{
@@ -47,17 +95,49 @@ li {
   width: 10%;
   height: 5%;
 }
+}
 
-@media screen and  (max-width:768px) { 
-  
+/* 300px〜790px：スマホ
+ ------------------------------ */
+@media screen and (min-width:300px) and (max-width:768px) { 
+
+  .growth-app {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    h1 {
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+    .battle-scores{
+      font-size: 15px;
+    }
+  }
+  .battle-score{
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  .judge-name {
+    margin-top: 25px;
+  }
+  .growth-app a{
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    //text-decoration: none;
+    //padding: 5px;
+  }
   .best16-show {
     flex-direction: row;
     text-align: center;
     height: 100%;
     width: 100%;
     padding-bottom: 4px;
-    background-color: gray;
-    color: orange;
+    background-color: rgb(236, 236, 215);
+    color: rgb(44, 43, 41);
+    h1 {
+      font-size: 30px;
+    }
   }
   .error-message {
     font-size: 5px;
@@ -68,20 +148,19 @@ li {
   .battle-score span{
     background-color: black;
     color: white;
-    padding: 3px;
+    padding: 2px;
     font-size: 8px;
   }
-  
   .best16-judge{
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
   }
   li {
     list-style: none;
     
   }
   .score-grading{
-    font-size: 20px;
+    font-size: 10px;
   }
   .score{
     width: 10%;
@@ -96,14 +175,60 @@ li {
     width: 20%;
     height: 5%;
   }
+  a{
+    font-size: 20px;
+  }
   
   //ここにCSSコードを書く。
  }
-   
+  .growth-top {
+    text-align: center;
+    a {
+      background-color: black;
+      color: white;
+      padding: 2px;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 25px;
+      background-color: yellow;
+    }
+  }
  /* 600px〜959px：タブレット
  ------------------------------ */
- @media screen and (min-width:600px) and (max-width:959px) {
+ @media screen and (min-width: 1024px) {
   
+  .growth-app {
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    .battle-scores {
+      font-size: 30px;
+      background-color: green;
+      color: white;
+      padding: 2px;
+    }
+    h2 {
+      width: 100%;
+      font-size: 30px;
+      background-color: yellow;
+    }
+    h4 {
+      padding: 0;
+      margin: 0;
+    }
+    h1 {
+      background-color: yellow;
+      width: 100%;
+    }
+    a {
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding: 3px;
+    }
+  }
   
   //ここにCSSコードを書く。
  }

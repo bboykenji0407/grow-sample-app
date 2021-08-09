@@ -2,19 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.growth-app {
-  text-align: center;
-}
-@media screen and (min-width:480px) and (max-width:599px) { 
+@media (min-width:1080) {
   .growth-app {
     text-align: center;
-    font-size: 80px;
+    width: 100%;
+    font-size: 50px;
+    .growth-app a{
+      font-size: 30px;
+    }
   }
+}
+/* 768px：スマホ
+ ------------------------------ */
+@media screen and (max-width:750px) {
+  .growth-app {
+
+    font-size: 30px;
+  } 
   //ここにCSSコードを書く。
  }
    
- /* 600px〜959px：タブレット
+ /* 1024px：タブレット
  ------------------------------ */
- @media screen and (min-width:600px) and (max-width:959px) {
+ @media screen and (max-width:1024px) {
+  .growth-app {
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    h1 {
+      font-size: 40px;
+      padding-bottom: 20px;
+    }
+  }
   //ここにCSSコードを書く。
  }
