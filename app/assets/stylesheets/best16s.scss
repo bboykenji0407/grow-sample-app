@@ -3,36 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //users,バトル用にも効いている。
-.best16-show {
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  background-color: gray;
-  font-size: 20px;
-  color: orange;
-  padding-bottom: 10px;
-}
-.battle-score span {
-  background-color: black;
-  color: white;
-  padding: 3px;
-}
 .best16-judge {
   text-align: center;
-  list-style: none;
 }
 .growth-app {
   text-align: center;
   width: 100%;
-  font-size: 40px;
-  .battle-scores {
-    font-size: 30px;
-    background-color: green;
-    color: white;
-    padding: 2px;
-  }
   h2 {
-    width: 100%;
     font-size: 30px;
     background-color: yellow;
   }
@@ -41,13 +18,10 @@
     margin: 0;
   }
   h1 {
-    background-color: yellow;
     width: 100%;
+    font-size: 40px;
   }
   a {
-    font-size: 30px;
-    background-color: black;
-    color: white;
     text-decoration: none;
     padding: 3px;
   }
@@ -62,20 +36,8 @@
     color: orange;
     padding-bottom: 10px;
   }
-  p {
-    color: rgb(110, 8, 8);
-  }
-  .battle-score span {
-    background-color: black;
-    color: white;
-    padding: 3px;
-  }
-
   .best16-judge {
     text-align: center;
-  }
-  li {
-    list-style: none;
   }
   .score-grading {
     font-size: 20px;
@@ -85,19 +47,11 @@
     height: 2%;
     font-size: 30px;
   }
-  .select-box {
-    margin: 10px;
-    font-size: 20px;
-  }
-  .integration {
-    width: 10%;
-    height: 5%;
-  }
 }
 
 /* 300px〜790px：スマホ
  ------------------------------ */
-@media screen and (min-width: 300px) and (max-width: 768px) {
+@media (max-width: 768) {
   .growth-app {
     text-align: center;
     width: 100%;
@@ -106,20 +60,11 @@
       font-size: 20px;
       padding-bottom: 20px;
     }
-    .battle-scores {
-      font-size: 15px;
-    }
-  }
-  .battle-score {
-    margin-bottom: 20px;
-    font-size: 20px;
   }
   .judge-name {
     margin-top: 25px;
   }
   .growth-app a {
-    background-color: black;
-    color: white;
     font-size: 25px;
     //text-decoration: none;
     //padding: 5px;
@@ -142,18 +87,9 @@
   p {
     color: rgb(110, 8, 8);
   }
-  .battle-score span {
-    background-color: black;
-    color: white;
-    padding: 2px;
-    font-size: 8px;
-  }
   .best16-judge {
     text-align: center;
     font-size: 20px;
-  }
-  li {
-    list-style: none;
   }
   .score-grading {
     font-size: 10px;
@@ -163,10 +99,6 @@
     height: 2%;
     font-size: 30px;
   }
-  .select-box {
-    margin: 10px;
-    font-size: 20px;
-  }
   .integration {
     width: 20%;
     height: 5%;
@@ -174,56 +106,20 @@
   a {
     font-size: 20px;
   }
-
-  //ここにCSSコードを書く。
+}
+.battle-score {
+  margin: 10px;
+}
+.battle-score-name {
+  margin: 5px;
 }
 .growth-top {
   text-align: center;
   a {
-    background-color: black;
-    color: white;
     padding: 2px;
     text-decoration: none;
   }
   h1 {
     font-size: 25px;
-    background-color: yellow;
   }
-}
-/* 600px〜959px：タブレット
- ------------------------------ */
-@media screen and (min-width: 1024px) {
-  .growth-app {
-    text-align: center;
-    width: 100%;
-    font-size: 40px;
-    .battle-scores {
-      font-size: 30px;
-      background-color: green;
-      color: white;
-      padding: 2px;
-    }
-    h2 {
-      width: 100%;
-      font-size: 30px;
-      background-color: yellow;
-    }
-    h4 {
-      padding: 0;
-      margin: 0;
-    }
-    h1 {
-      background-color: yellow;
-      width: 100%;
-    }
-    a {
-      font-size: 20px;
-      background-color: black;
-      color: white;
-      text-decoration: none;
-      padding: 3px;
-    }
-  }
-
-  //ここにCSSコードを書く。
 }

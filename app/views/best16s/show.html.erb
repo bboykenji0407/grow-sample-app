@@ -1,20 +1,24 @@
-<div class="best16-show">
-  <% if user_signed_in? %>
-    <h1>Best16 結果一覧</h1><%= link_to '戻る',  root_path %><br>
-  <% end %>
-  <p>　※注意※　勝敗とは関係ないので、個々のレベルアップにお役立てください。</p><br>
-  <% @best16s.each do |best16| %>
+<div class="wrapper">
+  <div class="result-holder">
+    <% if user_signed_in? %>
+      <h1 class="result-title">Best16 結果一覧</h1>
+      <%= link_to '戻る',  root_path, class: "button button-back"%>
+    <% end %>
+    <p> ※注意<br>勝敗とは関係ないので、<br>個々のレベルアップにお役立てください。</p><br>
+    <% @best16s.each do |best16| %>
       <p class='judge-name'><span>ジャッジ</span><br><%= best16.user.dancer_name %><br>
-    <div class='battle-score'>
-      <span><%= best16.battler.name %><br></span>
-      <span><br>基礎=<%= best16.foundation %>点</span>
-      <span>正確性＝<%= best16.accuracy %>点</span>
-      <span>独創性＝<%= best16.originality %>点</span>
-      <span><br>ダイナミック＝<%= best16.dynamic %>点</span>
-      <span>戦略＝<%= best16.strategy %>点</span>
-      <span><br>合計=<%= best16.score %></span>
-    </div>
-  <% end %>
-
+      <div class='battle-score'>
+        <div class="battle-score-name">
+          <p><%= best16.battler.name %></p>
+        </div>
+        <p>基礎=<%= best16.foundation %>点</p>
+        <p>正確性＝<%= best16.accuracy %>点</p>
+        <p>独創性＝<%= best16.originality %>点</p>
+        <p>ダイナミック＝<%= best16.dynamic %>点</p>
+        <p>戦略＝<%= best16.strategy %>点</p>
+        <p>合計=<%= best16.score %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
 

@@ -1,42 +1,62 @@
-<div class="best16-judge">
-  <h2>Semi Fainls <br>採点ページ!</h2>
-  <%= form_with model: @best4, method: :post, local: true do |form| %>
-  <%#= render 'layouts/error_messages', model: form.object %>
-  <div class="score-grading">※トーナメント順です。(半角数字入力)<br>
-    <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %><br>  
-    基礎値
-    <li><%= form.number_field :foundation, min:1,max:5, class: "score", id: "point1" %></li>
-    正確性
-    <li><%= form.number_field :accuracy, min:1,max:5, class: "score", id: "point2" %></li>
-    独創性
-    <li><%= form.number_field :originality, min:1,max:5,  class: "score", id: "point3" %></li>
-    ダイナミック
-    <li><%= form.number_field :dynamic, min:1,max:5, class: "score", id: "point4" %></li>
-    戦略
-    <li><%= form.number_field :strategy, min:1,max:5, class: "score", id: "point5" %></li><br>
-    <script>
-      $('#point5').change(function(){
-      var a = $('#point1').val();
-      var b = $('#point2').val();
-      var c = $('#point3').val();
-      var d = $('#point4').val();
-      var e = $('#point5').val();
-      var ai = parseInt(a);
-      var bi = parseInt(b);
-      var ci = parseInt(c);
-      var di = parseInt(d);
-      var ei = parseInt(e);
-      var JsScore = ai + bi + ci + di + ei
+<div class="wrapper">
+  <div class="best16-judge">
+    <h2 class="score-title">Semi Fainls</h2>
+    <%= form_with model: @best4, method: :post, local: true do |form| %>
+      <%= render 'layouts/error_messages', model: form.object %>
+      <div class="score-grading">※トーナメント順です。(半角数字入力)<br>
+        <%= form.collection_select(:battler_id, Battler.all, :id, :name, {}, {class:"select-box", id:"best16-select"}) %>  
+        <%# BEM設計  %>
+        <ul class="score-list">
+          <li class="score-list__item">
+            <h3 class="score-list__item-title">基礎値</h3>
+            <%= form.number_field :foundation, min:1,max:5, class: "score", id: "point1" %>
+          </li>
+          <li class="score-list__item">
+            <h3 class="score-list__item-title">正確性</h3>
+            <%= form.number_field :accuracy, min:1,max:5, class: "score", id: "point2" %>
+          </li>
+          <li class="score-list__item">
+            <h3 class="score-list__item-title">独創性</h3>
+            <%= form.number_field :originality, min:1,max:5,  class: "score", id: "point3" %>
+          </li>
+          <li class="score-list__item">
+            <h3 class="score-list__item-title">ダイナミック</h3>
+            <%= form.number_field :dynamic, min:1,max:5, class: "score", id: "point4" %>
+          </li>
+          <li class="score-list__item">
+            <h3 class="score-list__item-title">戦略</h3>
+            <%= form.number_field :strategy, min:1,max:5, class: "score", id: "point5" %>
+          </li>
+        </ul>
+        <%# BEM設計  %> 
+        <script>
+          $('#point5').change(function() {
+            var a = $('#point1').val();
+            var b = $('#point2').val();
+            var c = $('#point3').val();
+            var d = $('#point4').val();
+            var e = $('#point5').val();
+            var ai = parseInt(a);
+            var bi = parseInt(b);
+            var ci = parseInt(c);
+            var di = parseInt(d);
+            var ei = parseInt(e);
+            var JsScore = ai + bi + ci + di + ei
+          $('#JsScore').val(JsScore)
+          });
+        </script>
+      </div>
 
-      $('#JsScore').val(JsScore)
-      });
-    </script>
+      <div class="count-holder">
+        <p>※直接入力しない</p>
+        <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計"%>
+      </div>
+      
+      <div class="save-holder">
+        <p>※合計確認後、保存</p>
+        <%= form.submit '保存する', class: "button" %>
+        <%= link_to '戻る',  root_path , class: "button button-back"%>
+      </div>
+    <% end %>
   </div>
-    ※直接入力しない<br>
-  <%= form.text_field :score,  class: "integration", id: "JsScore", placeholder: "合計"
-   %><br>※合計確認後、保存
-  <br><%= form.submit '保存する' %>
-<% end %>
-
-<%= link_to '戻る',  best16s_index_path %>
 </div>

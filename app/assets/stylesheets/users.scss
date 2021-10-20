@@ -2,37 +2,124 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media (min-width:1080) {
+.wrapper {
+  color: black;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 300px;
+    background: url(./images/logo.jpg) top left / cover no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.2;
+  }
+}
+
+.button {
+  display: block;
+  width: 140px;
+  height: 40px;
+  margin: auto;
+  color: white;
+  background: linear-gradient(90deg, #67ffa1 0%, #38a763 100%);
+  line-height: 40px;
+  border-radius: 30px;
+  border: none;
+}
+.button-back {
+  background-image: none;
+  background-color: #b6b5b5;
+}
+.button + .button-back {
+  margin-top: 14px;
+}
+
+@media (min-width: 1080) {
   .growth-app {
     text-align: center;
     width: 100%;
     font-size: 50px;
-    .growth-app a{
-      font-size: 30px;
-    }
   }
 }
 /* 768px：スマホ
  ------------------------------ */
-@media screen and (max-width:750px) {
-  .growth-app {
-
-    font-size: 30px;
-  } 
-  //ここにCSSコードを書く。
- }
-   
- /* 1024px：タブレット
- ------------------------------ */
- @media screen and (max-width:1024px) {
-  .growth-app {
-    text-align: center;
-    width: 100%;
-    font-size: 40px;
-    h1 {
-      font-size: 40px;
-      padding-bottom: 20px;
+@media screen and (max-width: 768px) {
+  .judge-holder + .judge-holder {
+    margin-top: 40px;
+  }
+  .judge-list {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    .button + .button {
+      margin-top: 20px;
     }
   }
-  //ここにCSSコードを書く。
- }
+  .result-holder {
+    text-align: center;
+    font-size: 24/750 * 100vw;
+    margin: 100px 0;
+  }
+  .result-title {
+    font-size: 25px;
+  }
+  .growth-top {
+    padding: 100px 0;
+    .title {
+      font-size: 25px;
+    }
+  }
+  .growth-app {
+    h2 {
+      font-size: 30/750 * 100vw;
+      color: black;
+    }
+  }
+  // バトル評価 下層ページ
+  .select-box {
+    width: 250px;
+    height: 40px;
+    margin-top: 20px;
+  }
+  .score-list {
+    margin: 40px 0;
+  }
+  .score-list__item {
+    .score-list__item-title {
+      font-size: 20px;
+    }
+    .score {
+      margin-top: 10px;
+      width: 60px;
+      height: 60px;
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+  .score-list__item + .score-list__item {
+    margin-top: 20px;
+  }
+  .score-title {
+    font-size: 25px;
+  }
+}
+
+.integration {
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.save-holder {
+  margin-top: 30px;
+  .button {
+    margin-top: 14px;
+  }
+}

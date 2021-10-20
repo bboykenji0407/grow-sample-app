@@ -1,10 +1,10 @@
-<div class="best16-show">
+<div class="result-title">
   <% if user_signed_in? %>
     <h1>Final 結果一覧</h1><%= link_to '戻る',  root_path %><br>
   <% end %>
   <p>　※注意※　勝敗とは関係ないので、個々のレベルアップにお役立てください。</p><br>
   <% @finals.each do |final| %>
-      <p class= 'judge-name'><span>ジャッジ</span><br><%= final.user.dancer_name %><br><p>
+    <p class= 'judge-name'><span>ジャッジ</span><br><%= final.user.dancer_name %><br><p>
     <div class='battle-score'>
       <span><%= final.battler.name %></span>
       <span><br>基礎=<%= final.foundation %>点</span>

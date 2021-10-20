@@ -1,16 +1,32 @@
 <div class="growth-app">
-<body>
-  <h2>各バトルパートへ！！</h2>
-  <h4>評価用ページへ</h4>
-  <%= link_to 'バトルパート一覧', best16s_index_path, class: "subtitle" %>
+  <body>
+    <div class="wrapper">
+      <div class="growth-top">
 
-  <h2>バトル結果一覧</h2>
-  <%= link_to 'ベスト16', best16s_show_path, class:"battle-scores"%>
-  <%= link_to 'ベスト８', best8s_show_path, class: "battle-scores" %>
-  <%= link_to 'Semi Final', best4s_show_path, class: "battle-scores" %>
-  <%= link_to 'Final', finals_show_path, class: "battle-scores" %>
+        <div class="judge-holder">
+          <h1 class="title">バトル評価</h1>
+          <div class="judge-list">
+            <%= link_to 'Best-16', best16s_new_path, class: "button" %>
+            <%= link_to 'Best-8', best8s_new_path, class: "button" %>
+            <%= link_to 'Semi-Final', best4s_new_path, class: "button" %>
+            <%= link_to 'Final', finals_new_path, class: "button" %><br>
+            <% if user_signed_in? %>
+            <% end %>
+          </div>
+        </div>
 
+        <div class="judge-holder">
+          <h1 class="title">バトル結果一覧</h1>
+          <div class="judge-list">
+            <%= link_to 'Best-16', best16s_show_path, class:"button"%>
+            <%= link_to 'Best-8', best8s_show_path, class: "button" %>
+            <%= link_to 'Semi-Final', best4s_show_path, class: "button" %>
+            <%= link_to 'Final', finals_show_path, class: "button" %>
+          </div>
+        </div>
 
-  <br><%= link_to 'ログアウト',   destroy_user_session_path, method: :delete %>
-</body>
+        <%= link_to 'ログアウト',   destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
+  </body>
 </div>
